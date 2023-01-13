@@ -1,0 +1,54 @@
+fragment Post on Post {
+  stage
+  publishedAt
+  updatedAt
+  createdAt
+  remoteId: id
+  title
+  slug
+  category
+  content
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  cover {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  seo {
+    ... on Seo {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}
